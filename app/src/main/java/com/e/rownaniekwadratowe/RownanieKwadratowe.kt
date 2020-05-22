@@ -14,6 +14,11 @@ class RownanieKwadratowe(val a: Double, val b: Double, val c: Double) {
         println("Równanie: ${a}x^2+${b}x+${c}=0")
     }
 
+    fun pobierzRownanie():String{
+        return "Równanie: ${a}x^2+${b}x+${c}=0"
+    }
+
+
     fun obliczDelte(): Double {
         return b * b - 4 * a * c
     }
