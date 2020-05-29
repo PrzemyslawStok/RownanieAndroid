@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         button1.setOnClickListener {
-            val A_string = A_text.text.toString()git
+            val A_string = A_text.text.toString()
             Log.v("przykładowy tag","Pole tekstowe: "+A_string)
         }
 
