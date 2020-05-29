@@ -30,4 +30,8 @@ class MainActivity : AppCompatActivity() {
 
         //val rownanieKwadratowe = RownanieKwadratowe(A_text.text.toString().toDouble(),B_text.text.toString().toDouble(),C_text.text.toString().toDouble())
     }
+
+    fun getDouble():Double{
+        return 0.0
+    }
 }
