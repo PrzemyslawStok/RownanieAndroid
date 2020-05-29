@@ -4,6 +4,7 @@ import RownanieKwadratowe
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.EditText
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Exception
@@ -15,23 +16,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         button1.setOnClickListener {
-            val A_string = A_text.text.toString()
-            Log.v("przykładowy tag","Pole tekstowe: "+A_string)
-            var A_double = 0.0
+            val A = getDouble(A_text)
+            val B = getDouble(B_text)
+            val C = getDouble(C_text)
 
-            try {
-                A_double = A_string.toDouble()
-            }catch (e:Exception){
+            Log.v("przykładowy tag","Odczytane liczby: ${A} ${B} ${C}")
 
-            }
+            val naszeRownanie = RownanieKwadratowe(A,B,C)
 
-            Log.v("przykładowy tag","Odczytana liczba: "+A_double)
+            Log.v("rownanie",naszeRownanie.pobierzRownanie())
         }
-
-        //val rownanieKwadratowe = RownanieKwadratowe(A_text.text.toString().toDouble(),B_text.text.toString().toDouble(),C_text.text.toString().toDouble())
     }
 
-    fun getDouble():Double{
-        return 0.0
+    fun getDouble(nasz_tekst: EditText):Double{
+        val textString = nasz_tekst.text.toString()
+        var liczba: Double = 0.0
+
+        try {
+            liczba = textString.toDouble()
+        }catch (e:Exception){
+
+        }
+
+        return liczba
     }
 }
